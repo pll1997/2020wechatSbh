@@ -1,0 +1,31 @@
+/* pages/tabBar/guanmodian/guanmodian.wxss */
+page{background-color: #fff;}
+.maxss{width: 100%; background-color: #f7f7f7;
+  height: 46px;
+  position: fixed;
+}
+.INinputheader{ width:90%; height:30px; background-color:#fff;margin: 20rpx auto;
+  border-radius:10px; font-size: 14px;  position: relative;}
+.INsearchicon{ position: absolute;left:12px;top: 15rpx;color: #bdbdbd;}
+.weui-input{height: 30px;line-height: 30px; text-align: left; font-size: 0.9rem;
+  padding-left: 35px;padding-right: 15px;letter-spacing:0px;}
+.INtab{text-align: left;margin-left: 12px; color: #fff;}
+
+/* list -star */
+.maxxwlist{margin-top: 46px; padding-bottom:50rpx;}
+.xwlist{border-bottom:1px solid #f7f7f7;padding: 3%;
+  display: flex; justify-content: space-between;}
+.xw-left{width: 25%;height: 129rpx;margin-right:15rpx;display: flex; flex-flow: row wrap;align-content:center; }
+.xw-left image{width: 100%; height: 90%;}
+.xw-right{flex: 1;width: 75%; }
+.wx-r-1{font-size: 0.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.wx-r-2{font-size: 0.75rem; color:#9c9c9c; 
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  height: 71rpx; overflow: hidden;
+  line-height: 34rpx;
+}
+.wx-r-3{font-size: 24rpx;color:#cccccc;text-align: right;}
+/* list -end */

@@ -1,0 +1,61 @@
+/**index.wxss**/
+/* banner -star */
+.banner{width: 100%;height: 300rpx; display:flex; justify-content:center; align-items:center;
+  background-size: 100% 70%; background-position:top;background-repeat: no-repeat;}
+.swiper-box {width: 100%;height: 100%; display: block; overflow: hidden;}
+.u-img-slide{width:100%; height: 100%;}
+.swiper-box .wx-swiper-dot{width:10rpx;height: 10rpx; display: inline-flex;justify-content:space-between;}
+.swiper-box .wx-swiper-dot::before{
+    content: ''; flex-grow: 1;background: rgba(255,255,255,0.8);}
+.swiper-box .wx-swiper-dot-active::before{background-color: #fff;}
+/* banner -end */
+
+/*九宫格列表 - star*/
+.iconbtn{width:100%; background-color: #fff; margin: 15rpx 0; padding-top: 50rpx;}
+.iconbtns{height: inherit;padding-top: 5PX; display: flex;flex-wrap: wrap;justify-content:space-between;}
+.iconbtns .icon{width: 25%; text-align: center;padding-bottom: 50rpx;}
+.iconbtns .icon .nav_image{width: 34%;height: 75rpx;background-size: 300% 200%;background-repeat: no-repeat;background-position: center;}
+.iconbtns .icon text{display: block;font-size: 25rpx;}
+/*九宫格列表 - end */
+
+/*热门视频 - star*/
+.listcentent{ width: 100%;background-color: #fff; padding: 35rpx;}
+.tlt{
+  padding: 0 3%; border-bottom:1px solid #f7f7f7 ;
+  height: 30px; line-height: 30px; display: flex; justify-content: space-between;  margin-bottom: 15rpx;color: #08a48f;}
+.tlt .left text{display: inline-block;font-size: 1rem;vertical-align: middle;}
+.l-1{width: 15rpx; height: 64%; margin-right: 10rpx;background-color: #08a48f;}
+.right{font-size: 0.7rem;vertical-align: middle;}
+.maxlist{width: 100%;display: flex;justify-content:space-between; flex-wrap:wrap;}
+.list{width: 45%;background-color: #fff; margin-bottom: 30rpx;border-radius: 10rpx;}
+.list-top{width: 100%;}
+.list-top image{width: 100%;height: 240rpx; background-size: 100%; background-repeat: no-repeat;}
+.list-bottom{width: 90%;margin: 0 auto;padding-bottom: 10rpx;}
+.list-bottom-01{ font-size: 0.9rem;color: #333;
+  text-overflow:ellipsis;  display:-webkit-box;
+  -webkit-line-clamp:1;-webkit-box-orient:vertical;overflow: hidden;}
+.list-bottom-02{font-size: 0.8rem; color: #999999;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.list-bottom-03{font-size: 0.7rem; color: #989898;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+/*热门视频 - end*/
+
+/* 新闻动态 -star */
+.xwlist{border-bottom:1px solid #f7f7f7;
+  /* height: 169rpx;  */
+  padding: 3%;
+  display: flex; justify-content: space-between;
+}
+.xw-left{width: 25%;height: 160rpx;margin-right:15rpx;
+  display: flex; flex-flow: row wrap;align-content:center; }
+.xw-left image{width: 100%; height: 90%;}
+.xw-right{flex: 1;width: 75%; }
+.wx-r-1{font-size: 0.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.wx-r-2{font-size: 0.75rem; color:#9c9c9c; 
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  height: 71rpx; overflow: hidden;
+  line-height: 34rpx;
+}
+.wx-r-3{font-size: 24rpx;color:#cccccc;text-align: right;}
+/* 新闻动态 -end */

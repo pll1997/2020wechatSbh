@@ -1,0 +1,64 @@
+/* pages/tabBar/zanhui/zanhui.wxss */
+.container{overflow: hidden; }
+.nav-wrap {border-bottom:none; border: 1px solid red;}
+/* tab选项卡 - star */
+.navbar{z-index: 500; width: 100%; text-align: center;color: #333;font-size:0.9rem; box-sizing: border-box;
+  background-color: #FFF; display: flex; justify-content: center;border-bottom: 1px solid #e6e6e6;
+  position: fixed;
+}
+.navbar-item{width: 30%; padding: 20rpx 0px;margin: 0px 20rpx;}
+.navbar-item-active{border-bottom: 2rpx solid #08a48f; color: #08a48f;}
+.movie-content-wrapper{ padding: 0rpx;height: 100%;font-size: 28rpx;box-sizing: border-box;}
+.movie-content-wrapper swiper{position: relative; height: 100%;}
+.navbar_item{ width: 100%;height: 160rpx; margin-bottom: 30rpx;
+  display:flex;justify-content: space-between;align-items: center;}
+.navbar_item_lf{ width: 64%;padding-left: 30rpx; box-sizing: border-box;}
+.navbar_item_rt{width: 36%; text-align: center;display: flex;
+  align-items: center;justify-content: center;}
+.navbar_item .coupon_num{font-size: 32rpx; color: #808080;}
+.navbar_item .coupon_num .strong{font-size: 46rpx;
+  font-weight: 800; margin: 0px 10rpx;}
+.navbar_item .effective_time{font-size: 24rpx; color: #837f7f;}
+.navbar_item  .navbar_item_rt  navigator{ font-size: 32rpx; color: #999;}
+.navbar_item1 .coupon_num{ color: #e01212;}
+.navbar_item1 .navbar_item_rt navigator{color: #e01212;}
+
+.movie-container{flex: 1;width: 100%;overflow: auto;background-color: #fff;}
+.movie-content-wrapper{padding: 0rpx;height: 100%; font-size: 28rpx;box-sizing: border-box;}
+.movie-content-wrapper swiper{position: relative; height: 100%;}
+/* tab选项卡 - end */
+
+/* 搜索 - star */
+.maxss{width: 100%;height: 46px;margin-top: 41px; background-color: #f7f7f7;    border: 1px solid #f7f7f7;}
+.INinputheader{ width:90%; height:30px; background-color:#fff;margin: 20rpx auto;
+  border-radius:10px; font-size: 14px;  position: relative;}
+.INsearchicon{ position: absolute;left:12px;top: 15rpx;color: #bdbdbd;}
+.weui-input{height: 30px;line-height: 30px; text-align: left; font-size: 0.9rem;
+  padding-left: 35px;padding-right: 15px;letter-spacing:0px;}
+.INtab{text-align: left;margin-left: 12px; color: #fff;}
+/* 搜索 - end */
+.max-center{ }
+.tlt{width: 90%; height: 35px;line-height: 35px; margin: 0 auto;display: flex;justify-content:space-between; 
+  color: #08a48f;
+}
+
+/* list - star */
+.max-list{width: 90%; margin: 0 auto;}
+.list{border: 1px solid #f7f7f7; margin: 15rpx 0; padding:30rpx;text-align: center;}
+.list_box{overflow: auto;}
+.scroll-view{height: 100%;}
+.list image{width: 60%;height: 250rpx;}
+
+
+.max-zp-list{margin-top: 135rpx;}
+.zp-list{
+  width: 85%; margin: 45rpx auto; padding: 15rpx;
+  display: flex;justify-content:space-between;border-radius: 5px;
+  border-style: solid; box-shadow:0px 2px 4px 2px #DDDDDD; border-width: 0rpx;
+}
+.left{width: 93%; }
+.l-tlt{font-size: 0.9rem;font-weight: bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.l-jianj{font-size: 0.75rem; color: #ccc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.right{display: flex;flex-flow: row wrap; align-content:center;} 
+
+/* list - end */

@@ -1,0 +1,64 @@
+<!--pages/tabBar/zanhui/zanhui.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class="container"  style='height:{{windowHeight}}px; margin-top: {{height}}px'>
+  <!-- 导航栏 -->
+  <view class="navbar" >
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item.tlt}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="movie-container" >
+			<view class="movie-content-wrapper">
+				<swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+					<!-- 展商 -->
+					<swiper-item class="list_box">
+						<view style="padding:30rpx 0px;text-align:center;font-size:28rpx;" wx:if="{{secondList.length==0}}">暂无展商</view>
+						<scroll-view wx:else lower-threshold="60" bindscrolltolower="lower" 
+						bindscrolltoupper="refresh" scroll-y="true" class="scroll-view">
+						<view class="maxss">
+							<view class="INinputheader">
+								<icon class="INsearchicon" type="search" size="20" />
+								<input confirm-type="search" placeholder="请输入关键字搜索" placeholder-class="tui-input-plholder" 
+								class="weui-input" value="{{keyword}}" bindfocus="goMerchant" />
+							</view>
+						</view>
+						<view class="max-center">
+							<view class="tlt">
+								<view>人气展商</view>
+								<view>查看更多 >></view>
+							</view>
+							<view class="max-list">
+								<view class="list" wx:for="{{list}}" wx:key='index'>
+									<image src="{{github}}pll1997/2020wechatSbh/master/img/default/myzhanwei.png"
+									mode="widthFix"></image>
+									<view>{{item.name}}</view>
+								</view>
+							</view>
+						</view>
+						
+						</scroll-view>
+					</swiper-item>
+					<!-- 展品 -->
+					<swiper-item class="list_box zp_list_box">
+						<view style="padding:30rpx 0px;text-align:center;font-size:28rpx;" wx:if="{{secondList.length==0}}">暂无展品</view>
+						<scroll-view wx:else lower-threshold="60" bindscrolltolower="lower" 
+						bindscrolltoupper="refresh" scroll-y="true" class="scroll-view">
+							<view class="max-zp-list">
+								<view class="zp-list" wx:for="{{zplist}}" wx:key='index'>
+                 <view class="left">
+									 <view class="l-tlt">{{item.tlt}}</view>
+									 <view class="l-jianj">{{item.jianj}}</view>
+								 </view>
+                 <view class="right">
+                  <mp-icon class="arrow" type="field" icon="arrow" color="#ccc" size="{{12}}"></mp-icon>
+                 </view>
+                </view>
+							</view>
+						</scroll-view>
+					</swiper-item>
+				</swiper>
+			</view>
+		</view>
+</view>

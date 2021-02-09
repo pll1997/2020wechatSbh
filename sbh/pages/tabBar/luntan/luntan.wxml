@@ -1,0 +1,103 @@
+<!--pages/tabBar/luntan/luntan.wxml-->
+<!--pages/tabBar/zanhui/zanhui.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class="container" style='height:{{windowHeight}}px; margin-top: {{height}}px'>
+  <!-- 导航栏 -->
+  <view class="navbar">
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}"
+        data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item.tlt}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="movie-container">
+    <view class="movie-content-wrapper">
+      <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+        <!-- 展商 -->
+        <swiper-item class="list_box">
+          <view style="padding:30rpx 0px;text-align:center;font-size:28rpx;" wx:if="{{secondList.length==0}}">暂无展商
+          </view>
+          <scroll-view wx:else lower-threshold="60" bindscrolltolower="lower" bindscrolltoupper="refresh"
+            scroll-y="true" class="scroll-view">
+            <view class="select">
+              <view class='tab'>
+                <view class="sj" wx:for="{{tab}}" wx:key='index' catchtap="tab" data-index="{{index}}">
+                  <text>{{item.name}}</text>
+                  <image class='{{selectedFlag[index]? "select_img_rotate":""}}'
+                    src="{{github}}pll1997/2020wechatSbh/master/img/luntan/xl.png" mode="widthFix" alt="">
+                  </image>
+                </view>
+              </view>
+              <view class='option_box' wx:if="{{selectedFlag[tabindex]}}">
+                <text class='option {{opindex == item.index? "active" :""}}' wx:for="{{option[tabindex]}}"
+                  wx:key='index' catchtap="tapoption" data-tabindex="{{tabindex}}" data-index="{{index}}"
+                  data-name="{{item.name}}">{{item.name}}</text>
+              </view>
+            </view>
+
+            <view class="max-list" wx:if="{{!selectedFlag[tabindex]}}">
+              <view class="list" wx:for="{{ltlist}}" wx:key='index'>
+                <view class="lsit-l">
+                  <image class="yuan" src="{{github}}pll1997/2020wechatSbh/master/img/luntan/yuan.png" mode="widthFix">
+                  </image>
+                  <text class="xian"></text>
+                </view>
+                <view class="list-r">
+                  <view class="list-rs">
+                    <view class="r-01">{{item.tlt}}</view>
+                    <view class="r-02">{{item.dizi}}</view>
+                    <view class="r-03">{{item.time}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+          </scroll-view>
+        </swiper-item>
+        <!-- 展品 -->
+        <swiper-item class="list_box zp_list_box">
+          <view style="padding:30rpx 0px;text-align:center;font-size:28rpx;" wx:if="{{secondList.length==0}}">暂无展品
+          </view>
+          <scroll-view wx:else lower-threshold="60" bindscrolltolower="lower" bindscrolltoupper="refresh"
+            scroll-y="true" class="scroll-view">
+            <view class="maxss">
+              <view class="INinputheader">
+                <icon class="INsearchicon" type="search" size="20" />
+                <input confirm-type="search" placeholder="请输入关键字搜索" placeholder-class="tui-input-plholder"
+                  class="weui-input" value="{{keyword}}" bindfocus="goMerchant" />
+              </view>
+            </view>
+            <view class="jb-box">
+              <view class="jb-left">
+
+                <scroll-view class="l-scroll-view" scroll-y='true' scroll-with-animation='true' scroll-into-view="{{jbListId}}">
+                  <view class='jb_list_box' wx:for="{{jblist}}" wx:key='index' id='{{item.letter}}'>
+                    <block >
+                      <view class='jb_first_letter' >{{item.letter}}</view>
+                      <view class='jb_list' wx:for="{{item.data}}" wx:for-item="items" wx:key='index'>
+                        <view class="jb-l-left">
+                          <image src="{{github}}pll1997/2020wechatSbh/master/img/default/myzhanwei.png"></image>
+                        </view>
+                        <view class="jb-l-right">
+                          <view class="jb-tlt">{{items.tlt}}</view>
+                          <view class="jb-jj">高级高级顾问高</view>
+                          <view class="jb-jj">公司</view>
+                        </view>
+                      </view>
+                    </block>
+                  </view>
+                </scroll-view>
+
+              </view>
+              <view class="jb-right" id='right'>
+                <text class='letter_item' wx:for='{{letter}}' wx:key='this' catchtap='letterTap'
+                  data-item='{{item}}'>{{item}}</text>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

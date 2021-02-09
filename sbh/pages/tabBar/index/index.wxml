@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<!-- 'navbar-data'中navbar是自定义导航栏标题 -->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class="container" style='margin-top: {{height}}px'>
+  <view class="banner">
+    <swiper class='swiper-box' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{banner}}" wx:key="index">
+        <swiper-item>
+          <image src='{{github}}{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="iconbtn">
+    <view class="iconbtns">
+      <view class="icon" wx:for="{{icon}}" wx:key="index" data-text="{{item.text}}" bindtap="bindtap" data-catid="{{item.shopcate}}">
+        <image src="{{github}}{{item.url}}" class="nav_image" mode='widthFix'></image>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="listcentent">
+    <view class="tlt">
+      <view class="left"><text class="l-1"></text><text>热门视频</text></view>
+      <view class="right">更多>></view>
+    </view>
+    <view class="maxlist" hidden="{{hidden}}">
+      <view class="list" wx:for='{{videolist}}' wx:key="index">
+        <view class="list-top">
+          <image src="{{github}}{{item.img}}" binderror="errorFunction" data-index='{{index}}' 
+          mode="aspectFill" />
+        </view>
+        <view class="list-bottom">
+          <view class="list-bottom-01">{{item.tlt}}</view>
+          <view class="list-bottom-02">
+            <text>{{item.gs}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tlt">
+      <view class="left"><text class="l-1"></text><text>新闻动态</text></view>
+      <view class="right">更多>></view>
+    </view>
+    <view class="maxxwlist">
+      <view class="xwlist"  wx:for='{{xwlist}}' wx:key="index">
+        <view class="xw-left">
+          <image src="{{github}}{{item.img}}" ></image>
+        </view>
+        <view class="xw-right">
+          <view class="wx-r-1">{{item.tlt}}</view>
+          <view class="wx-r-2">{{item.janj}}</view>
+          <view class="wx-r-3">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>
